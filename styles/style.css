@@ -36,6 +36,14 @@ html, body {
   }
 }
 
+@media screen and (min-width:768px) {
+  .desc, .hero__date, .hero__calendar-month, .hero__calendar-table, .program__item, .restaurant__name, .restaurant__address, .restaurant__link, .dresscode__item, .timer__list, .questions__form fieldset, .questions__form button, .organizer__container img, .organizer__link, .footer__logo {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
+}
+
 section, header, footer {
   position: relative;
   color: #fff;
@@ -56,9 +64,6 @@ section, header, footer {
   border-color: transparent;
   border-style: solid;
   text-align: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .desc {
@@ -71,9 +76,6 @@ section, header, footer {
   border-style: solid;
   text-align: center;
   margin: 0 auto;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 @media screen and (max-width:450px) {
@@ -123,6 +125,7 @@ canvas {
   row-gap: 5rem;
   max-width: 650px;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .header__logo-text {
@@ -200,8 +203,6 @@ canvas {
   }
 }
 
-.hero {}
-
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -237,9 +238,6 @@ canvas {
   border-color: transparent;
   border-style: solid;
   text-align: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .hero__calendar {
@@ -253,9 +251,6 @@ canvas {
   max-width: 350px;
   width: 100%;
   margin: 0 auto;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .hero__calendar-table {
@@ -264,9 +259,6 @@ canvas {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 @media screen and (max-width:450px) {
@@ -286,8 +278,6 @@ canvas {
     max-width: 350px;
   }
 }
-
-.program {}
 
 .program__container {
   display: flex;
@@ -309,9 +299,6 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .program_item-time {
@@ -333,7 +320,6 @@ canvas {
 .program_item-desc {
   color: var(--light-color);
   font-size: 24px;
-  font-family: 'FuturaPT', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 400;
   background-position: center center;
@@ -355,8 +341,6 @@ canvas {
   }
 }
 
-.restaurant {}
-
 .restaurant__container {
   display: flex;
   flex-direction: column;
@@ -377,9 +361,6 @@ canvas {
   border-color: transparent;
   border-style: solid;
   text-align: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .restaurant__address {
@@ -392,15 +373,11 @@ canvas {
   border-color: transparent;
   border-style: solid;
   text-align: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .restaurant__link {
   color: var(--dark-color);
   font-size: 20px;
-  font-family: 'FuturaPT', Arial, sans-serif;
   line-height: 1.55;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -416,13 +393,9 @@ canvas {
   padding: 15px;
   pointer-events: all;
   margin-top: 2rem;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 @media screen and (max-width:450px) {
-
   .restaurant__name {
     font-size: 20px;
   }
@@ -436,8 +409,6 @@ canvas {
     margin-top: 1rem;
   }
 }
-
-.dresscode {}
 
 .dresscode__container {
   display: flex;
@@ -455,9 +426,6 @@ canvas {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .dresscode__item img {
@@ -492,8 +460,6 @@ canvas {
   }
 }
 
-.wishes {}
-
 .wishes__container {
   display: flex;
   flex-direction: column;
@@ -505,8 +471,6 @@ canvas {
     gap: 2rem;
   }
 }
-
-.timer {}
 
 .timer__container {
   display: flex;
@@ -522,9 +486,6 @@ canvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .timer__item {
@@ -629,12 +590,6 @@ canvas {
   margin: 0 auto;
 }
 
-.questions__form fieldset {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
-}
-
 .questions__form legend {
   display: block;
   color: var(--light-color);
@@ -728,9 +683,6 @@ canvas {
   padding: 15px;
   pointer-events: all;
   position: relative;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .questions__form button::before {
@@ -766,8 +718,6 @@ canvas {
   }
 }
 
-.organizer {}
-
 .organizer__container {
   display: flex;
   flex-direction: column;
@@ -783,14 +733,7 @@ canvas {
   object-fit: cover;
   border-radius: 50%;
   border: 1px solid var(--btn-border-color);
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
-
-.organizer__title {}
-
-.organizer__desc {}
 
 .organizer__link {
   color: var(--dark-color);
@@ -809,9 +752,6 @@ canvas {
   padding: 15px;
   pointer-events: all;
   position: relative;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 
@@ -828,9 +768,6 @@ canvas {
   flex-direction: column;
   justify-content: center;
   row-gap: 1rem;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%;
 }
 
 .footer__logo img {
