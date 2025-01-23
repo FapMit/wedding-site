@@ -7,7 +7,7 @@ function cursorAnimation() {
 
   let config = {
     TEXTURE_DOWNSAMPLE: 1,
-    DENSITY_DISSIPATION: 0.98,
+    DENSITY_DISSIPATION: 0.95,
     VELOCITY_DISSIPATION: 0.99,
     PRESSURE_DISSIPATION: 0.8,
     PRESSURE_ITERATIONS: 45,
@@ -809,26 +809,12 @@ function cursorAnimation() {
     pointers[0].x = e.clientX;
     pointers[0].y = e.clientY;
     pointers[0].down = true;
-
-    //   Убрать если необходимо только при нажатии мыши
-    // let colorSwith = Math.random();
-    // if (colorSwith > 0.95) {
-    //   pointers[0].color = [
-    //     Math.random() + 0.2,
-    //     Math.random() + 0.2,
-    //     Math.random() + 0.2,
-    //   ];
-    // }
-
-    config.DENSITY_DISSIPATION = 0.95;
-    // только фуксия цвет
     pointers[0].color = [16, 0, 16];
   });
 
   canvas.addEventListener(
     "touchmove",
     (e) => {
-      // e.preventDefault();
       const touches = e.targetTouches;
       for (let i = 0; i < touches.length; i++) {
         let pointer = pointers[i];
@@ -845,9 +831,7 @@ function cursorAnimation() {
   canvas.addEventListener(
     "touchstart",
     (e) => {
-      // e.preventDefault();
       const touches = e.targetTouches;
-      // config.DENSITY_DISSIPATION = 0.9;
       for (let i = 0; i < touches.length; i++) {
         if (i >= pointers.length) pointers.push(new pointerPrototype());
 
@@ -855,12 +839,6 @@ function cursorAnimation() {
         pointers[i].down = true;
         pointers[i].x = touches[i].pageX;
         pointers[i].y = touches[i].pageY;
-        // pointers[i].color = [
-        //   Math.random() + 0.2,
-        //   Math.random() + 0.2,
-        //   Math.random() + 0.2,
-        // ];
-        // только фуксия цвет
         pointers[i].color = [16, 0, 16];
       }
     },
@@ -873,16 +851,6 @@ function cursorAnimation() {
       for (let j = 0; j < pointers.length; j++)
         if (touches[i].identifier == pointers[j].id) pointers[j].down = false;
   });
-
-  // Эффект только при нажатой клавише мыши
-  // canvas.addEventListener('mousedown', () => {
-  //     pointers[0].down = true;
-  //     pointers[0].color = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
-  // });
-
-  // window.addEventListener('mouseup', () => {
-  //     pointers[0].down = false;
-  // });
 }
 
 export default cursorAnimation;
