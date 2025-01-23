@@ -847,7 +847,7 @@ function cursorAnimation() {
     (e) => {
       // e.preventDefault();
       const touches = e.targetTouches;
-      config.DENSITY_DISSIPATION = 0.9;
+      // config.DENSITY_DISSIPATION = 0.9;
       for (let i = 0; i < touches.length; i++) {
         if (i >= pointers.length) pointers.push(new pointerPrototype());
 
